@@ -8,18 +8,25 @@ const GlobalStyle = createGlobalStyle`
   body{
     max-height: 100vh;
     background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.black};
     fontSize: ${({ theme }) => theme.fonts.format.base};
+    font-family: ${({ theme }) => theme.fonts.fontFamily};
     ${({ theme }) => ({ ...theme.fonts.format.text })}
   }
 
-  h1 { ${({ theme }) => ({ ...theme.fonts.format.title })}}
+  h1 {
+    font-style: italic;
+    ${({ theme }) => ({ ...theme.fonts.format.title })}
+  }
 
   h2 {
-    font-style: italic;
     ${({ theme }) => ({ ...theme.fonts.format.subtitle })}
   }
 
-  p { ${({ theme }) => ({ ...theme.fonts.format.text })}}
+
+  p {
+    ${({ theme }) => ({ ...theme.fonts.format.text })}
+  }
 `;
 
 export default GlobalStyle;

@@ -62,8 +62,8 @@ const breakpoints = {
 	xl: 1920,
 };
 
-const spacing = (n) => `${n * 4}px`;
-const sizing = (n) => `${n * 4}px`;
+const spacing = (n) => `${n * 0.25}rem`;
+const sizing = (n) => `${n * 0.25}rem`;
 
 const theme = {
 	breakpoints,
