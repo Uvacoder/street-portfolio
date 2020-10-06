@@ -1,12 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React, { StrictMode } from 'react';
+import { render } from 'react-dom';
+import { ThemeProvider } from 'styled-components';
+import 'normalize.css';
 
-ReactDOM.render(
-	<React.StrictMode>
-		<App />
-	</React.StrictMode>,
+import * as serviceWorker from './serviceWorker';
+import theme, { GlobalStyle } from './theme';
+import App from './components/App';
+
+render(
+	<StrictMode>
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			<App />
+		</ThemeProvider>
+	</StrictMode>,
 	document.getElementById('root')
 );
 
