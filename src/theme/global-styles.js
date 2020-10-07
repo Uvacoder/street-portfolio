@@ -1,4 +1,15 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
+
+const fadeInAnimation = keyframes`
+	0% {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+`;
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -26,6 +37,16 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     ${({ theme }) => ({ ...theme.fonts.format.text })}
+  }
+
+  img {
+	  animation: ${fadeInAnimation}
+	  	${(props) => props.theme.transitions.duration.base}ms
+      ${(props) => props.theme.transitions.easing.easeInOut}
+      forwards;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
+	  height: auto;
+    position: absolute;
   }
 `;
 

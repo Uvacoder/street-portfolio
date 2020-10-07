@@ -11,6 +11,7 @@ const MainLink = styled.button`
 	font-weight: ${(props) => props.theme.fonts.format.subtitle.fontWeight};
 	line-height: ${(props) => props.theme.fonts.format.subtitle.lineHeight};
 	position: relative;
+	text-transform: capitalize;
 
 	&:hover {
 		color: ${(props) => props.theme.colors.main};
