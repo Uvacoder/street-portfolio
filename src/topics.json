@@ -1,0 +1,279 @@
+{
+	"topics": [
+		{
+			"topic": "fashion",
+			"description": "Fashion is a form of ugliness so intolerable that we have to alter it every six months.",
+			"color ": "#f5f5f5",
+			"images": [
+				{
+					"name": "analise-benevides.jpg",
+					"author": "Analize Benevides",
+					"alt": "Analise Benevides photography."
+				},
+				{
+					"name": "atikh-bana.jpg",
+					"author": "Atikh Bana",
+					"alt": "Atikh Bana photography."
+				},
+				{
+					"name": "daniela-mota.jpg",
+					"author": "Daniela Mota",
+					"alt": "Daniela Mota photography."
+				},
+				{
+					"name": "dom-hill.jpg",
+					"author": "Dom Hill",
+					"alt": "Dom Hill photography."
+				},
+				{
+					"name": "fezbot2000.jpg",
+					"author": "fezbot2000",
+					"alt": "fezbot2000 photography."
+				},
+				{
+					"name": "ian-dooley.jpg",
+					"author": "Ian Dooley",
+					"alt": "Ian Dooley photography."
+				},
+				{
+					"name": "judeus-samson.jpg",
+					"author": "Judeus Samson",
+					"alt": "Judeus Samson photography."
+				},
+				{
+					"name": "luobulinka.jpg",
+					"author": "Luobulinka",
+					"alt": "Luobulinka photography."
+				},
+				{
+					"name": "tamara-bellis-red.jpg",
+					"author": "Tamara Bellis",
+					"alt": "Tamara Bellis photography."
+				},
+				{
+					"name": "tamara-bellis-white.jpg",
+					"author": "Tamara Bellis",
+					"alt": "Tamara Bellis photography."
+				}
+			]
+		},
+		{
+			"topic": "experimental",
+			"description": "Absurdity is the ecstasy of intellectualism.",
+			"color": "#F3B3A6",
+			"images": [
+				{
+					"name": "fotografierende-trip.jpg",
+					"author": "Fotografierende",
+					"alt": "Fotografierende photography."
+				},
+				{
+					"name": "fotografierende.jpg",
+					"author": "Fotografierende",
+					"alt": "Fotografierende photography."
+				},
+				{
+					"name": "gryffyn-m.jpg",
+					"author": "Gryffyn M.",
+					"alt": "Gryffyn M. photography."
+				},
+				{
+					"name": "jakob-owens.jpg",
+					"author": "Jakob Owens",
+					"alt": "Jakob Owens photography."
+				},
+				{
+					"name": "liza-pooor.jpg",
+					"author": "Liza Pooor",
+					"alt": "Liza Poor photography."
+				},
+				{
+					"name": "mike-von.jpg",
+					"author": "Mike Von",
+					"alt": "Mike Von photography."
+				},
+				{
+					"name": "robin-gislain-shumbusho.jpg",
+					"author": "Robin Gislain Shumbusho",
+					"alt": "Robin Gislain Shumbusho photography."
+				},
+				{
+					"name": "sindy-sunssengut.jpg",
+					"author": "Sindy Sunssegut",
+					"alt": "Sindy Sunssegut photography"
+				},
+				{
+					"name": "tvbeats.jpg",
+					"author": "Tvbeats",
+					"alt": "Tamara Bellis photography."
+				},
+				{
+					"name": "umanoide.jpg",
+					"author": "Umanoide",
+					"alt": "Umanoide photography."
+				}
+			]
+		},
+		{
+			"topic": "architecture",
+			"description": "There are no rules of architecture for a castle in the clouds.",
+			"color": "#7798AB",
+			"images": [
+				{
+					"name": "clark-van-der-beken.jpg",
+					"author": "Clark Van Der Beken",
+					"alt": "Clark Van Der Beken photography."
+				},
+				{
+					"name": "dayo-adepoju.jpg",
+					"author": "Dayo Adepoju",
+					"alt": "Dayo Adepoju photography."
+				},
+				{
+					"name": "filip-urban.jpg",
+					"author": "Filip Urban",
+					"alt": "Filip Urban photography."
+				},
+				{
+					"name": "hamza-madrid.jpg",
+					"author": "Hamza Madrid",
+					"alt": "Hamza Madrid photography."
+				},
+				{
+					"name": "jonathan-marchal.jpg",
+					"author": "Jonathan Marchal",
+					"alt": "Jonathan Marchal photography."
+				},
+				{
+					"name": "kallol-majumdar.jpg",
+					"author": "Kallol Majumdar",
+					"alt": "Kallol Majumdar photography."
+				},
+				{
+					"name": "leif-chirstoph-gottwald.jpg",
+					"author": "Leif Christoph Gottwald",
+					"alt": "Leif Christoph Gottwald photography."
+				},
+				{
+					"name": "therelugarjo.jpg",
+					"author": "Therelugarjo",
+					"alt": "Thereglugarjo photography."
+				},
+				{
+					"name": "yasmine-arfaoui.jpg",
+					"author": "Yasmine Arfaoui",
+					"alt": "Yasmine Arfaoui photography."
+				}
+			]
+		},
+		{
+			"topic": "travel",
+			"description": "The world is a book and those who do not travel read only one page.",
+			"color": "#FFB563",
+			"images": [
+				{
+					"name": "annie-spratt.jpg",
+					"author": "Annie Spratt",
+					"alt": "Annie Spratt photography."
+				},
+				{
+					"name": "daniel-jensen.jpg",
+					"author": "Daniel Jensen",
+					"alt": "Daniel Jensen photography."
+				},
+				{
+					"name": "erik-odiin.jpg",
+					"author": "Erik Odiin",
+					"alt": "Erik Odiin photography."
+				},
+				{
+					"name": "jack-ward.jpg",
+					"author": "Jack Ward",
+					"alt": "Jack Ward photography."
+				},
+				{
+					"name": "jake-blucker.jpg",
+					"author": "Jale Blucker",
+					"alt": "Jake Blucker photography."
+				},
+				{
+					"name": "luca-bravo.jpg",
+					"author": "Luca Bravo",
+					"alt": "Luca Bravo photography."
+				},
+				{
+					"name": "oxana-v.jpg",
+					"author": "Oxana V.",
+					"alt": "Oxana V. photography."
+				},
+				{
+					"name": "simon-migal.jpg",
+					"author": "Simon Migal",
+					"alt": "Simon Migal photography."
+				},
+				{
+					"name": "timo-stern.jpg",
+					"author": "Timo Stern",
+					"alt": "Timo Stern photography."
+				},
+								{
+					"name": "tyler-nix-q.jpg",
+					"author": "Tyler Nix Q.",
+					"alt": "Tyler Nix Q. photography."
+				}
+			]
+		},
+		{
+			"topic": "film",
+			"description": "Cinema is the ultimate pervert art. It doesn't give you what you desire - it tells you how to desire.",
+			"color": "#DBD56E",
+			"images": [
+				{
+					"name": "andrew-keymaster.jpg",
+					"author": "Andrew Keymaster",
+					"alt": "Andrew Keymaster photography."
+				},
+				{
+					"name": "andrew-winkler.jpg",
+					"author": "Andrew Winkler",
+					"alt": "Andrew Winkler photography."
+				},
+				{
+					"name": "barthelemy-de-mazenod-stairs.jpg",
+					"author": "Batherlemy de Mazenod",
+					"alt": "Batherlemy de Mazenod photography."
+				},
+				{
+					"name": "barthelemy-de-mazenod.jpg",
+					"author": "Batherlemy de Mazenod",
+					"alt": "Batherlemy de Mazenod photography."
+				},
+				{
+					"name": "emre-gencer.jpg",
+					"author": "Emre Gencer",
+					"alt": "Emre Gencer photography."
+				},
+				{
+					"name": "jade-stephens.jpg",
+					"author": "Jade Stephens",
+					"alt": "Jade Stephens photography."
+				},
+				{
+					"name": "jean-carlo-emer-window.jpg",
+					"author": "Jean Carlo Emer",
+					"alt": "Jean Carlo Emer photography."
+				},
+				{
+					"name": "michael-jasmund.jpg",
+					"author": "Michael Jasmund",
+					"alt": "Michael Jasmund photography."
+				},
+				{
+					"name": "stacy-jasmund.jpg",
+					"author": "Stacy Jasmund",
+					"alt": "Stacy Jasmund photography."
+				}
+			]
+		}
+	]
+}

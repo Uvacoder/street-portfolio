@@ -1,34 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Image from './image';
+
 const Wrapper = styled.div`
-	height: 100%;
+	background-color: ${(props) => props.backgroundColor};
+	height: 100vh;
+	overflow: hidden;
 	position: absolute;
+	top: 0;
 	width: 100%;
 	z-index: -99;
-	overflow: hidden;
-	background-color: ${(props) => props.backgroundColor};
 `;
 
-const rndHelper = (max, min = 0) => {
-	return Math.floor(Math.random() * (max - min) + min);
-};
-
-const TopicImage = ({ width, height, fontSize, topic, number }) => {
-	return (
-		<img
-			alt={topic}
-			src={`images/${topic}/${number}.jpg`}
-			style={{
-				width: `${rndHelper(25, 5)}rem`,
-				top: rndHelper(height - 25 * fontSize),
-				left: rndHelper(width - 25 * fontSize),
-			}}
-		/>
-	);
-};
-
-const BackgroundGallery = ({ topic, color }) => {
+const BackgroundGallery = ({ topic, color, images }) => {
 	const maxWH = window.innerHeight;
 	const maxWW = window.innerWidth;
 	const fontSize = parseFloat(
@@ -37,18 +22,18 @@ const BackgroundGallery = ({ topic, color }) => {
 
 	return (
 		<Wrapper backgroundColor={color}>
-			{Array(10)
-				.fill(null)
-				.map((_, i) => (
-					<TopicImage
-						key={topic + i}
-						height={maxWH}
-						width={maxWW}
-						fontSize={fontSize}
-						topic={topic}
-						number={1}
-					/>
-				))}
+			{images.map((item, i) => (
+				<Image
+					key={item.name}
+					height={maxWH}
+					width={maxWW}
+					fontSize={fontSize}
+					topic={topic}
+					name={item.name}
+					alt={item.alt}
+					position="absolute"
+				/>
+			))}
 		</Wrapper>
 	);
 };

@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 import { fallInAnimation } from '../theme/transitions';
 
-const Title = styled.h1`
+const Header = styled.header`
 	animation: ${fallInAnimation}
 		${(props) => props.theme.transitions.duration.base}ms
 		${(props) => props.theme.transitions.easing.easeInOut} forwards;
-	padding: ${(props) => props.theme.spacing(12)};
+	display: flex;
 `;
 
-export default Title;
+export default Header;

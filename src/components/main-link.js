@@ -1,25 +1,24 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const MainLink = styled.button`
-	background-color: transparent;
-	border: none;
-	color: ${(props) => props.theme.colors.black};
-	cursor: pointer;
+import { fadeInLeftAnimation } from '../theme/transitions';
+
+const MainLink = styled(Link)`
+	animation: ${fadeInLeftAnimation}
+		${(props) => props.theme.transitions.duration.base}ms
+		${(props) => props.theme.transitions.easing.easeInOut} forwards;
+	animation-delay: ${(props) => props.delay * 250 || 0}ms;
 	display: flex;
 	font-size: ${(props) => props.theme.fonts.format.subtitle.fontSize};
 	font-style: italic;
 	font-weight: ${(props) => props.theme.fonts.format.subtitle.fontWeight};
 	line-height: ${(props) => props.theme.fonts.format.subtitle.lineHeight};
+	opacity: 0;
 	position: relative;
 	text-transform: capitalize;
-
-	&:hover {
-		color: ${(props) => props.theme.colors.main};
-	}
-
-	&:focus {
-		outline: none;
-	}
+	text-decoration: none;
+	color: ${(props) =>
+		props.isActive ? props.theme.colors.main : props.theme.colors.black};
 
 	&::before,
 	&::after {

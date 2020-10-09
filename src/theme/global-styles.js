@@ -1,15 +1,6 @@
-import { createGlobalStyle, keyframes } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-const fadeInAnimation = keyframes`
-	0% {
-		opacity: 0;
-		transform: translateY(4rem);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-`;
+import { fadeInAnimation } from './transitions';
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -25,12 +16,24 @@ const GlobalStyle = createGlobalStyle`
     ${({ theme }) => ({ ...theme.fonts.format.text })}
   }
 
+  a {
+    color: ${({ theme }) => theme.colors.black};
+	  transition: color ${(props) => props.theme.transitions.duration.base}ms
+		${(props) => props.theme.transitions.easing.easeInOut};
+
+	  &:hover {
+		  color: ${(props) => props.theme.colors.main};
+	  }
+  }
+
   h1 {
     font-style: italic;
+	  text-transform: capitalize;
     ${({ theme }) => ({ ...theme.fonts.format.title })}
   }
 
   h2 {
+	  text-transform: capitalize;
     ${({ theme }) => ({ ...theme.fonts.format.subtitle })}
   }
 
@@ -46,7 +49,6 @@ const GlobalStyle = createGlobalStyle`
       forwards;
     box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
 	  height: auto;
-    position: absolute;
   }
 `;
 
