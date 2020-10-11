@@ -7,20 +7,29 @@ const rndHelper = (max, min = 0) => {
 };
 
 const Image = ({ width, height, fontSize, topic, name, alt, position }) => {
+	const imgPath = `images/${topic}/${name}`;
+	const styles = {
+		left: width && rndHelper(width - 25 * fontSize),
+		position,
+		top: height && rndHelper(height - 25 * fontSize),
+		width: `${rndHelper(25, 10)}rem`,
+	};
+
 	return (
-		<LazyLoadImage
-			alt={alt}
-			src={`images/${topic}/${name}`}
-			loading="lazy"
-			effect="blur"
-			delayTime={250}
-			style={{
-				left: width && rndHelper(width - 25 * fontSize),
-				position,
-				top: height && rndHelper(height - 25 * fontSize),
-				width: `${rndHelper(25, 10)}rem`,
-			}}
-		/>
+		<picture>
+			<source srcSet={`${imgPath}.webp`} type="image/webp" />
+			<source srcSet={`${imgPath}.jpg`} type="image/jpg" />
+			<LazyLoadImage
+				loading="lazy"
+				effect="blur"
+				delayTime={250}
+				style={{
+					...styles,
+				}}
+				srcSet={`${imgPath}.webp`}
+				type="image/webp"
+			/>
+		</picture>
 	);
 };
 

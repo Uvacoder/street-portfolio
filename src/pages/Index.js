@@ -8,7 +8,7 @@ import Nav from '../components/nav';
 const Index = ({ topics }) => {
 	const [current, setCurrent] = useState(topics[0]);
 
-	const onHover = (topic) => {
+	const handleSelect = (topic) => {
 		setCurrent(topics.filter((t) => t.topic === topic)[0]);
 	};
 
@@ -18,12 +18,13 @@ const Index = ({ topics }) => {
 				topic={current.topic}
 				color={current.color}
 				images={current.images}
+				max={7}
 			/>
 			<Main>
 				<Divider />
 				<p>Choose a project</p>
 
-				<Nav topics={topics} current={current} onHover={onHover} />
+				<Nav topics={topics} current={current} onSelect={handleSelect} />
 			</Main>
 		</>
 	);

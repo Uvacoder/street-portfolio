@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 	z-index: -99;
 `;
 
-const BackgroundGallery = ({ topic, color, images }) => {
+const BackgroundGallery = ({ topic, color, images, max }) => {
 	const maxWH = window.innerHeight;
 	const maxWW = window.innerWidth;
 	const fontSize = parseFloat(
@@ -22,18 +22,22 @@ const BackgroundGallery = ({ topic, color, images }) => {
 
 	return (
 		<Wrapper backgroundColor={color}>
-			{images.map((item, i) => (
-				<Image
-					key={item.name}
-					height={maxWH}
-					width={maxWW}
-					fontSize={fontSize}
-					topic={topic}
-					name={item.name}
-					alt={item.alt}
-					position="absolute"
-				/>
-			))}
+			{images.map((item, i) => {
+				if (i >= max) return null;
+
+				return (
+					<Image
+						key={item.name}
+						height={maxWH}
+						width={maxWW}
+						fontSize={fontSize}
+						topic={topic}
+						name={item.name}
+						alt={item.alt}
+						position="absolute"
+					/>
+				);
+			})}
 		</Wrapper>
 	);
 };
