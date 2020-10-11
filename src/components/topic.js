@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import { fadeInLeftAnimation } from '../theme/transitions';
 
 const TopicWrapper = styled.div`
-	display: flex;
 	align-items: flex-end;
+	display: flex;
 `;
 
 const TopicSelector = styled.div`
@@ -19,15 +19,36 @@ const TopicSelector = styled.div`
 	font-weight: ${(props) => props.theme.fonts.format.subtitle.fontWeight};
 	line-height: ${(props) => props.theme.fonts.format.subtitle.lineHeight};
 	opacity: 0;
-	text-transform: capitalize;
 	position: relative;
-	transition: all ${(props) => props.theme.transitions.duration.base}ms
-		${(props) => props.theme.transitions.easing.easeInOut};
+	text-transform: capitalize;
+	overflow: hidden;
+	${(props) => props.theme.transitions.easing.easeInOut};
 
-	& > label {
+	& label {
 		color: ${(props) =>
 			props.isSelected ? props.theme.colors.main : props.theme.colors.black};
 		cursor: pointer;
+		display: block;
+		transform: translateY(0);
+		transition: all ${(props) => props.theme.transitions.duration.base}ms;
+	}
+
+	& span {
+		color: ${(props) => props.theme.colors.main};
+		display: block;
+		position: absolute;
+		top: 0;
+		transform: translateY(-100%);
+	}
+
+	&:hover label {
+		color: ${(props) => props.theme.colors.main};
+		transform: translateY(100%);
+	}
+
+	&:hover span {
+		color: ${(props) => props.theme.colors.main};
+		transform: translateY(-100%);
 	}
 
 	& input {
@@ -51,14 +72,20 @@ const TopicLink = styled(Link)`
 		content: '/';
 		display: block;
 	}
+
+	&:hover {
+		color: ${(props) => props.theme.colors.black};
+		text-decoration: underline;
+	}
 `;
 
 const Topic = ({ topic, delay, isSelected, onSelect }) => {
 	return (
 		<TopicWrapper>
-			<TopicSelector delay={delay} isSelected={isSelected}>
+			<TopicSelector delay={delay} isSelected={isSelected} content={topic}>
 				<label htmlFor={topic} onChange={() => onSelect(topic)}>
 					{topic}
+					<span>{topic}</span>
 					<input
 						type="radio"
 						id={topic}
