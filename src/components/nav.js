@@ -1,33 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import MainLink from './main-link';
+import Topic from './topic';
 
-const NavContainer = styled.nav`
+const NavWrapper = styled.nav`
 	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
-	gap: ${({ theme }) => theme.spacing(6)};
+	justify-items: flex-start;
 `;
 
-const Nav = ({ topics, current, onHover }) => {
+const Nav = ({ topics, current, onSelect }) => {
 	return (
-		<NavContainer>
+		<NavWrapper>
 			{topics.map(({ topic }, i) => {
 				return (
-					<MainLink
-						alt={topic}
-						delay={i}
-						isActive={current.topic === topic}
+					<Topic
 						key={topic}
-						onMouseEnter={() => onHover(topic)}
-						to={`/${topic}`}
-					>
-						{topic}
-					</MainLink>
+						delay={i}
+						onSelect={onSelect}
+						isSelected={current.topic === topic}
+						topic={topic}
+					/>
 				);
 			})}
-		</NavContainer>
+		</NavWrapper>
 	);
 };
 
