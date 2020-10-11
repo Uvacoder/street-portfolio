@@ -29,26 +29,26 @@ const TopicSelector = styled.div`
 			props.isSelected ? props.theme.colors.main : props.theme.colors.black};
 		cursor: pointer;
 		display: block;
-		transform: translateY(0);
+		transform: translateY(-100%);
 		transition: all ${(props) => props.theme.transitions.duration.base}ms;
 	}
 
 	& span {
-		color: ${(props) => props.theme.colors.main};
+		color: ${(props) =>
+			props.isSelected ? props.theme.colors.main : props.theme.colors.black};
 		display: block;
 		position: absolute;
 		top: 0;
-		transform: translateY(-100%);
+		transform: translateY(100%);
 	}
 
 	&:hover label {
 		color: ${(props) => props.theme.colors.main};
-		transform: translateY(100%);
+		transform: translateY(0%);
 	}
 
 	&:hover span {
-		color: ${(props) => props.theme.colors.main};
-		transform: translateY(-100%);
+		transform: translateY(100%);
 	}
 
 	& input {

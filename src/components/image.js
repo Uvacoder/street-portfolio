@@ -23,6 +23,7 @@ const Image = ({ width, height, fontSize, topic, name, alt, position }) => {
 				loading="lazy"
 				effect="blur"
 				delayTime={250}
+				alt={alt}
 				style={{
 					...styles,
 				}}

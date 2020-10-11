@@ -5,7 +5,7 @@ import PageShell from '../hoc/page-shell';
 import Index from '../pages/Index';
 import Gallery from './gallery';
 
-const App = ({ topics }) => {
+const App = ({ topics, links }) => {
 	return (
 		<Switch>
 			<Route
@@ -13,7 +13,7 @@ const App = ({ topics }) => {
 				exact
 				component={PageShell(
 					() => (
-						<Index topics={topics} />
+						<Index topics={topics} links={links} />
 					),
 					'Portfolio',
 					false

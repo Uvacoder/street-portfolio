@@ -275,5 +275,24 @@
 				}
 			]
 		}
+	],
+	"links": [
+		{
+			"title": "GitHub",
+			"to": "https://github.com/danielkvist"
+		},
+		{
+
+			"title": "Repository",
+			"to": "https://github.com/danielkvist/street-portfolio"
+		},
+		{
+			"title": "Twitter",
+			"to": "https://twitter.com/danielkvist_"
+		},
+		{
+			"title": "LinkedIn",
+			"to": "https://www.linkedin.com/in/daniel-zaragoza-006797172/"
+		}
 	]
 }

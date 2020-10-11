@@ -4,8 +4,9 @@ import BackgroundGallery from '../components/background-gallery';
 import Main from '../components/main';
 import Divider from '../components/divider';
 import Nav from '../components/nav';
+import Footer from '../components/footer';
 
-const Index = ({ topics }) => {
+const Index = ({ topics, links }) => {
 	const [current, setCurrent] = useState(topics[0]);
 
 	const handleSelect = (topic) => {
@@ -26,6 +27,7 @@ const Index = ({ topics }) => {
 
 				<Nav topics={topics} current={current} onSelect={handleSelect} />
 			</Main>
+			<Footer links={links} />
 		</>
 	);
 };
