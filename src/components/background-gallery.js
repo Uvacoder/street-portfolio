@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Image from './image';
+import Image from './background-image';
 
 const Wrapper = styled.div`
 	background-color: ${(props) => props.backgroundColor};
