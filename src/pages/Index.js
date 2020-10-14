@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 import BackgroundGallery from '../components/background-gallery';
 import Main from '../components/main';
@@ -22,8 +23,18 @@ const Index = ({ topics, links }) => {
 				max={7}
 			/>
 			<Main>
-				<Divider />
-				<p>Choose a project</p>
+				<Divider
+					initial={{ opacity: 0, width: 0 }}
+					animate={{ opacity: 1, width: 72 }}
+					transition={{ duration: 0.6, ease: 'easeIn' }}
+				/>
+				<motion.div
+					initial={{ opacity: 0, y: -10 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: 0.1, duration: 0.6, ease: 'easeIn' }}
+				>
+					<span>Choose a project</span>
+				</motion.div>
 
 				<Nav topics={topics} current={current} onSelect={handleSelect} />
 			</Main>

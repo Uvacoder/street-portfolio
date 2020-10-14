@@ -1,88 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
-import { fadeInLeftAnimation } from '../theme/transitions';
-
-const TopicWrapper = styled.div`
-	align-items: flex-end;
-	display: flex;
-`;
-
-const TopicSelector = styled.div`
-	animation: ${fadeInLeftAnimation}
-		${(props) => props.theme.transitions.duration.base}ms
-		${(props) => props.theme.transitions.easing.easeInOut} forwards;
-	animation-delay: ${(props) => props.delay * 250 || 0}ms;
-	font-size: ${(props) => props.theme.fonts.format.subtitle.fontSize};
-	font-style: italic;
-	font-weight: ${(props) => props.theme.fonts.format.subtitle.fontWeight};
-	line-height: ${(props) => props.theme.fonts.format.subtitle.lineHeight};
-	opacity: 0;
-	position: relative;
-	text-transform: capitalize;
-	overflow: hidden;
-	${(props) => props.theme.transitions.easing.easeInOut};
-
-	& label {
-		color: ${(props) =>
-			props.isSelected ? props.theme.colors.main : props.theme.colors.black};
-		cursor: pointer;
-		display: block;
-		transform: translateY(-100%);
-		transition: all ${(props) => props.theme.transitions.duration.base}ms;
-	}
-
-	& span {
-		color: ${(props) =>
-			props.isSelected ? props.theme.colors.main : props.theme.colors.black};
-		display: block;
-		position: absolute;
-		top: 0;
-		transform: translateY(100%);
-	}
-
-	&:hover label {
-		color: ${(props) => props.theme.colors.main};
-		transform: translateY(0%);
-	}
-
-	&:hover span {
-		transform: translateY(100%);
-	}
-
-	& input {
-		position: absolute;
-		left: -50vw;
-	}
-`;
-
-const TopicLink = styled(Link)`
-	animation: ${fadeInLeftAnimation}
-		${(props) => props.theme.transitions.duration.base}ms
-		${(props) => props.theme.transitions.duration.base}ms
-		${(props) => props.theme.transitions.easing.easeInOut} forwards;
-	display: flex;
-	font-size: ${(props) => props.theme.fonts.format.base};
-	font-weight: bold;
-	opacity: 0;
-	text-decoration: none;
-
-	&::before {
-		content: '/';
-		display: block;
-	}
-
-	&:hover {
-		color: ${(props) => props.theme.colors.black};
-		text-decoration: underline;
-	}
-`;
+import FlexEndWrapper from './flex-end-wrapper';
+import TopicSelector from './topic-selector';
+import TopicLink from './topic-link';
 
 const Topic = ({ topic, delay, isSelected, onSelect }) => {
 	return (
-		<TopicWrapper>
-			<TopicSelector delay={delay} isSelected={isSelected} content={topic}>
+		<FlexEndWrapper>
+			<TopicSelector
+				initial={{ opacity: 0, x: '-100%' }}
+				animate={{ opacity: 1, x: 0 }}
+				transition={{ delay: delay * 0.1, duration: 0.6, ease: 'easeInOut' }}
+				isSelected={isSelected}
+				content={topic}
+			>
 				<label htmlFor={topic} onChange={() => onSelect(topic)}>
 					{topic}
 					<span>{topic}</span>
@@ -95,11 +27,17 @@ const Topic = ({ topic, delay, isSelected, onSelect }) => {
 				</label>
 			</TopicSelector>
 			{isSelected ? (
-				<TopicLink alt={topic} to={`/${topic}`}>
-					explore
-				</TopicLink>
+				<motion.span
+					initial={{ opacity: 0, y: 50, x: -50 }}
+					animate={{ opacity: 1, y: 0, x: 0 }}
+					transition={{ duration: 0.2, ease: 'easeInOut' }}
+				>
+					<TopicLink alt={topic} to={`/${topic}`}>
+						explore
+					</TopicLink>
+				</motion.span>
 			) : null}
-		</TopicWrapper>
+		</FlexEndWrapper>
 	);
 };
 

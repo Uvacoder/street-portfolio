@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { fadeInAnimation } from '../theme/transitions';
-import Image from '../components/image';
+import Image from './gallery-image';
 
 const GalleryContainer = styled.div`
-	animation: ${fadeInAnimation}
-		${(props) => props.theme.transitions.duration.base}ms
-		${(props) => props.theme.transitions.easing.easeInOut} forwards;
 	height: 100%;
 	width: 100%;
 `;
@@ -24,6 +20,10 @@ const GallerySubtitle = styled.p`
 
 const GalleryBody = styled.main`
 	padding: ${(props) => props.theme.spacing(12)};
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: ${(props) => props.theme.spacing(4)};
 
 	& > img {
 		margin: ${(props) => props.theme.spacing(2)};
@@ -38,27 +38,17 @@ const Gallery = ({ topic, description, images }) => {
 					<GalleryTitle>{topic}</GalleryTitle>
 					<GallerySubtitle>{description}</GallerySubtitle>
 				</header>
-				<div
-					style={{
-						display: 'grid',
-						placeItems: 'center',
-						gridTemplateColumns: '1fr 5fr 1fr',
-					}}
-				>
-					<div></div>
-					<GalleryBody>
-						{images.map((item, i) => (
-							<Image
-								key={item.name + i}
-								topic={topic}
-								name={item.name}
-								alt={item.alt}
-								position="relative"
-							/>
-						))}
-					</GalleryBody>
-					<div></div>
-				</div>
+				<GalleryBody>
+					{images.map((item, i) => (
+						<Image
+							key={item.name + i}
+							topic={topic}
+							name={item.name}
+							description={item.description}
+							alt={item.alt}
+						/>
+					))}
+				</GalleryBody>
 			</article>
 		</GalleryContainer>
 	);

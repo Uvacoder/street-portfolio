@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import SocialLink from './social-link';
+
 const FooterWrapper = styled.footer`
 	position: absolute;
 	bottom: 0;
@@ -9,21 +11,18 @@ const FooterWrapper = styled.footer`
 	gap: 1rem;
 `;
 
-const SocialLink = styled.a`
-	color: ${(props) => props.theme.colors.black};
-	text-decoration: none;
-
-	&:hover {
-		color: ${(props) => props.theme.colors.black};
-		text-decoration: underline;
-	}
-`;
-
 const Footer = ({ links }) => {
 	return (
 		<FooterWrapper>
-			{links.map((link) => (
-				<SocialLink key={link.title} href={link.to} alt={link.title}>
+			{links.map((link, i) => (
+				<SocialLink
+					initial={{ opacity: 0, y: 100 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ delay: i * 0.2, duration: 0.6, ease: 'easeIn' }}
+					key={link.title}
+					href={link.to}
+					alt={link.title}
+				>
 					{link.title}
 				</SocialLink>
 			))}
