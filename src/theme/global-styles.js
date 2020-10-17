@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     max-height: 100vh;
   }
-
+  
   body{
     max-height: 100vh;
     background-color: ${({ theme }) => theme.colors.white};
@@ -35,14 +35,8 @@ const GlobalStyle = createGlobalStyle`
     ${({ theme }) => ({ ...theme.fonts.format.subtitle })}
   }
 
-
   p {
     ${({ theme }) => ({ ...theme.fonts.format.text })}
-  }
-
-  img {
-    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.1);
-	  height: auto;
   }
 `;
 
