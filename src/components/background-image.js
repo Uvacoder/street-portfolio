@@ -15,6 +15,7 @@ const Image = ({ width, height, fontSize, topic, name, alt, position }) => {
 
 	return (
 		<LazyLoadImage
+			delayTime={900}
 			loading="lazy"
 			effect="blur"
 			alt={alt}
