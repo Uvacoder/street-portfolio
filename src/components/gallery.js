@@ -1,56 +1,44 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useMemo } from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
+import GalleryHeader from './gallery-header';
+import GalleryLink from './gallery-link';
 import Image from './gallery-image';
 
-const GalleryContainer = styled.div`
-	height: 100%;
-	width: 100%;
-`;
-
-const GalleryTitle = styled.h2`
-	text-align: center;
-`;
-
-const GallerySubtitle = styled.p`
-	text-align: center;
-	padding: ${(props) => props.theme.spacing(12)};
-	padding-top: 0;
-`;
-
-const GalleryBody = styled.main`
-	padding: ${(props) => props.theme.spacing(12)};
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: ${(props) => props.theme.spacing(4)};
-
-	& > img {
-		margin: ${(props) => props.theme.spacing(2)};
-	}
-`;
-
 const Gallery = ({ topic, description, images }) => {
+	const items = useMemo(() => {
+		return images.map(({ name }) => (
+			<GalleryLink to={`/${topic}/${name}`} alt={name}>
+				<Image
+					whileHover={{
+						scale: 1.1,
+						transition: {
+							ease: 'easeInOut',
+						},
+					}}
+					key={name}
+					img={`images/${topic}/${name}.webp`}
+				/>
+			</GalleryLink>
+		));
+	}, [images, topic]);
+
 	return (
-		<GalleryContainer>
-			<article>
-				<header>
-					<GalleryTitle>{topic}</GalleryTitle>
-					<GallerySubtitle>{description}</GallerySubtitle>
-				</header>
-				<GalleryBody>
-					{images.map((item, i) => (
-						<Image
-							key={item.name + i}
-							topic={topic}
-							name={item.name}
-							description={item.description}
-							alt={item.alt}
-						/>
-					))}
-				</GalleryBody>
-			</article>
-		</GalleryContainer>
+		<>
+			<GalleryHeader title={topic} description={description} />
+
+			<main>
+				<AliceCarousel
+					mouseTracking
+					items={items}
+					animationType="fadeout"
+					animationDuration={600}
+					infinite
+					disableDotsControls
+				/>
+			</main>
+		</>
 	);
 };
 
