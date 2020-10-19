@@ -6,11 +6,9 @@ const GalleryImage = styled(motion.div)`
 	background-image: url(${(props) => props.img});
 	background-repeat: no-repeat;
 	background-size: cover;
-	height: 50vh;
-	margin: auto;
+	height: 496px;
 	position: ${(props) => props.position || 'center'};
-	width: 100vw;
-	max-width: ${(props) => props.theme.breakpoints.sm};
+	width: 600px;
 `;
 
 export default GalleryImage;

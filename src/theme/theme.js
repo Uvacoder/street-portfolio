@@ -40,10 +40,14 @@ const fonts = {
 
 const transitions = {
 	easing: {
-		easeInOut: 'cubic-bezier(0.4, 0, 0.2, 1)',
-		easeOut: 'cubic-bezier(0.0, 0, 0.2, 1)',
-		easeIn: 'cubic-bezier(0.4, 0, 1, 1)',
-		sharp: 'cubic-bezier(0.4, 0, 0.6, 1)',
+		easeInOut: 'cubic-bezier(0.83, 0, 0.17, 1)',
+		easeOut: 'cubic-bezier(0.22, 1, 0.36, 1)',
+		easeIn: 'cubic-bezier(0.64, 0, 0.78, 0)',
+	},
+	framer: {
+		easeInOut: [0.83, 0, 0.17, 1],
+		easeOut: [0.22, 1, 0.36, 1],
+		easeIn: [0.64, 0, 0.78, 0],
 	},
 	duration: {
 		shorter: 200,
@@ -73,3 +77,4 @@ const theme = {
 };
 
 export default theme;
+export { transitions };

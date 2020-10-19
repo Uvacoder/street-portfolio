@@ -1,5 +1,5 @@
 import GlobalStyle from './global-styles';
-import theme from './theme';
+import theme, { transitions } from './theme';
 
 export default theme;
-export { GlobalStyle };
+export { GlobalStyle, transitions };

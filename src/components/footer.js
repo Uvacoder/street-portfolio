@@ -2,13 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import SocialLink from './social-link';
+import { transitions } from '../theme';
 
 const FooterWrapper = styled.footer`
-	position: absolute;
 	bottom: 0;
-	padding: 1rem;
 	display: flex;
 	gap: 1rem;
+	overflow: hidden;
+	padding: 1rem;
+	position: absolute;
 `;
 
 const Footer = ({ links }) => {
@@ -18,7 +20,11 @@ const Footer = ({ links }) => {
 				<SocialLink
 					initial={{ opacity: 0, y: 100 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: i * 0.2, duration: 0.6, ease: 'easeIn' }}
+					transition={{
+						delay: i * 0.2,
+						duration: 0.6,
+						ease: transitions.framer.easeOut,
+					}}
 					key={link.title}
 					href={link.to}
 					alt={link.title}

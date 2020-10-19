@@ -6,6 +6,7 @@ import Main from '../components/main';
 import Divider from '../components/divider';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
+import { transitions } from '../theme';
 
 const Index = ({ topics, links }) => {
 	const [current, setCurrent] = useState(topics[0]);
@@ -25,13 +26,21 @@ const Index = ({ topics, links }) => {
 			<Main>
 				<Divider
 					initial={{ opacity: 0, width: 0 }}
-					animate={{ opacity: 1, width: 72 }}
-					transition={{ duration: 0.6, ease: 'easeIn' }}
+					animate={{ opacity: 1, width: 90 }}
+					transition={{
+						delay: 0.6,
+						duration: 0.6,
+						ease: transitions.framer.easeOut,
+					}}
 				/>
 				<motion.div
 					initial={{ opacity: 0, y: -10 }}
 					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.1, duration: 0.6, ease: 'easeIn' }}
+					transition={{
+						delay: 0.6,
+						duration: 0.6,
+						ease: transitions.framer.easeOut,
+					}}
 				>
 					<span>Choose a project</span>
 				</motion.div>

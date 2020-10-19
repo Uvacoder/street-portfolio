@@ -1,32 +1,40 @@
-import React, { useMemo } from 'react';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 
+import { topics } from '../config.json';
 import GalleryHeader from './gallery-header';
 import GalleryLink from './gallery-link';
-import Image from './gallery-image';
+import GalleryImage from './gallery-image';
+import { transitions } from '../theme';
 
-const Gallery = ({ topic, description, images }) => {
-	const items = useMemo(() => {
-		return images.map(({ name }) => (
+const returnItems = (topic, images) => {
+	return images.map(({ name }) => {
+		return (
 			<GalleryLink to={`/${topic}/${name}`} alt={name}>
-				<Image
+				<GalleryImage
 					whileHover={{
 						scale: 1.1,
 						transition: {
-							ease: 'easeInOut',
+							ease: transitions.framer.easeInOut,
 						},
 					}}
-					key={name}
 					img={`images/${topic}/${name}.webp`}
 				/>
 			</GalleryLink>
-		));
-	}, [images, topic]);
+		);
+	});
+};
+
+const Gallery = () => {
+	const { topic } = useParams();
+	const current = topics.filter((t) => t.topic === topic)[0];
+	const items = returnItems(current.topic, current.images);
 
 	return (
 		<>
-			<GalleryHeader title={topic} description={description} />
+			<GalleryHeader title={topic} description={current.description} />
 
 			<main>
 				<AliceCarousel

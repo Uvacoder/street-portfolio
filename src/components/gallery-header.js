@@ -5,7 +5,7 @@ import GalleryTitle from './gallery-title';
 import GallerySubtitle from './gallery-subtitle';
 
 const GalleryHeader = ({ title, description }) => (
-	<header>
+	<>
 		<motion.div
 			initial={{ opacity: 0 }}
 			animate={{ opacity: 1 }}
@@ -20,7 +20,7 @@ const GalleryHeader = ({ title, description }) => (
 		>
 			<GallerySubtitle>{description}</GallerySubtitle>
 		</motion.div>
-	</header>
+	</>
 );
 
 export default GalleryHeader;
