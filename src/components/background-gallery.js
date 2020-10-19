@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Image from './background-image';
+import BackgroundImage from './background-image';
 
 const Wrapper = styled.div`
-	background-color: ${(props) => props.backgroundColor};
+	background-color: ${(props) =>
+		props.backgroundColor || props.theme.colors.white};
 	height: 100vh;
 	overflow: hidden;
 	position: absolute;
@@ -26,7 +27,7 @@ const BackgroundGallery = ({ topic, color, images, max }) => {
 				if (i >= max) return null;
 
 				return (
-					<Image
+					<BackgroundImage
 						key={item.name}
 						height={maxWH}
 						width={maxWW}

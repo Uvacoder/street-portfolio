@@ -4,7 +4,15 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 
 import random from '../utils/random';
 
-const Image = ({ width, height, fontSize, topic, name, alt, position }) => {
+const BackgroundImage = ({
+	width,
+	height,
+	fontSize,
+	topic,
+	name,
+	alt,
+	position,
+}) => {
 	const imgPath = `images/${topic}/${name}`;
 	const styles = {
 		left: width && random(width - 25 * fontSize),
@@ -15,7 +23,6 @@ const Image = ({ width, height, fontSize, topic, name, alt, position }) => {
 
 	return (
 		<LazyLoadImage
-			delayTime={900}
 			loading="lazy"
 			effect="blur"
 			alt={alt}
@@ -28,4 +35,4 @@ const Image = ({ width, height, fontSize, topic, name, alt, position }) => {
 	);
 };
 
-export default Image;
+export default BackgroundImage;
