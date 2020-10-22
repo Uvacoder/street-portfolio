@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 
 const Frame = styled(motion.div)`
 	align-content: center;
-	justify-content: center;
-	display: flex;
 	background-color: ${(props) => props.theme.colors.white};
+	display: flex;
 	height: 495px;
+	justify-content: center;
+	max-width: 900px;
 	overflow: hidden;
 	width: 599px;
 `;
